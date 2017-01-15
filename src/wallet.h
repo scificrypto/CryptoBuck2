@@ -97,7 +97,7 @@ public:
 
     bool fFileBacked;
     std::string strWalletFile;
-
+    bool fSplitBlock;
     std::set<int64_t> setKeyPool;
     /*
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -135,6 +135,7 @@ public:
         nKernelsTried = 0;
         nCoinDaysTried = 0;
         nTimeFirstKey = 0;
+        fSplitBlock = false;
     }
 
     std::map<uint256, CWalletTx> mapWallet;
@@ -236,7 +237,7 @@ public:
     int64_t GetNewMint() const;
     int64_t GetWatchOnlyStake() const;
     int64_t GetWatchOnlyNewMint() const;
-    bool CreateTransaction(const std::vector<std::pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, const CCoinControl *coinControl=NULL);
+    bool CreateTransaction(const std::vector<std::pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, int nSplitBlock, const CCoinControl *coinControl=NULL);
     bool CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, const CCoinControl *coinControl=NULL);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey);
 
