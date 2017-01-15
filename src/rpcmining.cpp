@@ -27,9 +27,9 @@ Value getsubsidy(const Array& params, bool fHelp)
             "getsubsidy [nTarget]\n"
             "Returns proof-of-work subsidy value for the specified value of target.");
 
-    unsigned int nBits = 0;
+//    unsigned int nBits = 0;
 
-    if (params.size() != 0)
+/*    if (params.size() != 0)
     {
         CBigNum bnTarget(uint256(params[0].get_str()));
         nBits = bnTarget.GetCompact();
@@ -38,8 +38,8 @@ Value getsubsidy(const Array& params, bool fHelp)
     {
         nBits = GetNextTargetRequired(pindexBest, false);
     }
-
-    return (uint64_t)GetProofOfWorkReward(nBits);
+*/
+    return (uint64_t)GetProofOfWorkReward(GetLastBlockIndex(pindexBest, false)->nHeight);
 }
 
 Value getmininginfo(const Array& params, bool fHelp)
@@ -59,7 +59,7 @@ Value getmininginfo(const Array& params, bool fHelp)
     diff.push_back(Pair("search-interval",      (int)nLastCoinStakeSearchInterval));
     obj.push_back(Pair("difficulty",    diff));
 
-    obj.push_back(Pair("blockvalue",    (uint64_t)GetProofOfWorkReward(GetLastBlockIndex(pindexBest, false)->nBits)));
+    obj.push_back(Pair("blockvalue",    (uint64_t)GetProofOfWorkReward(GetLastBlockIndex(pindexBest, false)->nHeight)));
     obj.push_back(Pair("netmhashps",    GetPoWMHashPS()));
     obj.push_back(Pair("netstakeweight",GetPoSKernelPS()));
     obj.push_back(Pair("errors",        GetWarnings("statusbar")));
@@ -238,10 +238,10 @@ Value getworkex(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "NovaCoin is not connected!");
+        throw JSONRPCError(-9, "CryptoBuck is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "NovaCoin is downloading blocks...");
+        throw JSONRPCError(-10, "CryptoBuck is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -369,10 +369,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "NovaCoin is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "CryptoBuck is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "NovaCoin is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "CryptoBuck is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;    // FIXME: thread safety
@@ -510,10 +510,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "NovaCoin is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "CryptoBuck is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "NovaCoin is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "CryptoBuck is downloading blocks...");
 
     static CReserveKey reservekey(pwalletMain);
 

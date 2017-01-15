@@ -187,7 +187,7 @@ bool GetIPFromIRC(SOCKET hSocket, string strMyName, CNetAddr& ipRet)
 void ThreadIRCSeed(void* parg)
 {
     // Make this thread recognisable as the IRC seeding thread
-    RenameThread("novacoin-ircseed");
+    RenameThread("cryptobuck-ircseed");
 
     printf("ThreadIRCSeed started\n");
 
@@ -214,7 +214,7 @@ void ThreadIRCSeed2(void* parg)
         return;
 
     // ... or if IRC is not enabled.
-    if (!GetBoolArg("-irc", true))
+    if (!GetBoolArg("-irc", false))
         return;
 
     printf("ThreadIRCSeed trying to connect...\n");
@@ -302,16 +302,16 @@ void ThreadIRCSeed2(void* parg)
         }
 
         if (fTestNet) {
-            Send(hSocket, "JOIN #novacoinTEST2\r");
-            Send(hSocket, "WHO #novacoinTEST2\r");
+            Send(hSocket, "JOIN #cryptobuckTEST2\r");
+            Send(hSocket, "WHO #cryptobuckTEST2\r");
         } else {
-            // randomly join #novacoin00-#novacoin05
+            // randomly join #cryptobuck00-#cryptobuck05
             // int channel_number = GetRandInt(5);
 
             // Channel number is always 0 for initial release
             int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #novacoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #novacoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #cryptobuck%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #cryptobuck%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();
