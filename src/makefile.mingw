@@ -9,20 +9,20 @@ CC=gcc
 USE_IPV6:=1
 USE_SSE2:=1
 
-BOOST_SUFFIX?=-mgw49-mt-s-1_57
+BOOST_SUFFIX?=-mgw49-mt-s-1_59
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
- -I"/c/deps/boost_1_57_0" \
+ -I"/c/deps/boost_1_59_0" \
  -I"/c/deps" \
- -I"/c/deps/db-6.0.20/build_unix" \
- -I"/c/deps/openssl-1.0.2/include"
+ -I"/c/deps/db-6.0.23/build_unix" \
+ -I"/c/deps/openssl-1.0.1p/include"
  
 LIBPATHS= \
  -L"$(CURDIR)/leveldb" \
- -L"/c/deps/boost_1_57_0/stage/lib" \
- -L"/c/deps/db-6.0.20/build_unix" \
- -L"/c/deps/openssl-1.0.2"
+ -L"/c/deps/boost_1_59_0/stage/lib" \
+ -L"/c/deps/db-6.0.23/build_unix" \
+ -L"/c/deps/openssl-1.0.1p"
 
 LIBS= \
   -l leveldb \
@@ -94,7 +94,7 @@ OBJS= \
     obj/cryptogram.o \
     obj/ipcollector.o
 
-all: novacoind.exe
+all: cryptobuckd.exe
 
 #
 # LevelDB support
@@ -150,11 +150,11 @@ endif
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-novacoind.exe: $(OBJS:obj/%=obj/%)
+cryptobuckd.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
-	-del /Q novacoind.exe
+	-del /Q cryptobuckd.exe
 	-del /Q obj\*
 	-del /Q crypto\scrypt\asm\obj\*
 

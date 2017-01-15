@@ -6,13 +6,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About NovaCoin</source>
-        <translation>О NovaCoin</translation>
+        <source>About CryptoBuck</source>
+        <translation>О CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="56"/>
-        <source>&lt;b&gt;NovaCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;NovaCoin&lt;/b&gt; версия</translation>
+        <source>&lt;b&gt;CryptoBuck&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;CryptoBuck&lt;/b&gt; версия</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="97"/>
@@ -20,12 +20,14 @@
 Copyright © 2011-2012 The PPCoin Developers
 Copyright © 2014 The Peerunity Developers
 Copyright © 2014 The EmerCoin Developers
-Copyright © 2012-2016 The NovaCoin developers</source>
+Copyright © 2012-2016 The NovaCoin developers
+Copyright © 2017 The CryptoBuck developers</source>
         <translation>Все права защищены © 2009-2016 Разработчики Bitcoin
 Все права защищены © 2011-2012 Разработчики PPCoin
 Все права защищены © 2014 Разработчики Peerunity
 Все права защищены © 2014 Разработчики EmerCoin
-Все права защищены © 2012-2016 Разработчики NovaCoin</translation>
+Все права защищены © 2012-2016 Разработчики NovaCoin
+Все права защищены © 2017 Разработчики CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="114"/>
@@ -42,7 +44,7 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="20"/>
-        <source>These are your NovaCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your CryptoBuck addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>Это Ваши адреса для получения платежей. Вы можете дать разные адреса отправителям, чтобы отслеживать, кто именно вам платит.</translation>
     </message>
     <message>
@@ -77,8 +79,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="102"/>
-        <source>Sign a message to prove you own a NovaCoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом NovaCoin</translation>
+        <source>Sign a message to prove you own a CryptoBuck address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="105"/>
@@ -87,8 +89,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="116"/>
-        <source>Verify a message to ensure it was signed with a specified NovaCoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом NovaCoin</translation>
+        <source>Verify a message to ensure it was signed with a specified CryptoBuck address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="119"/>
@@ -239,7 +241,7 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="116"/>
-        <source>NovaCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <source>CryptoBuck will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
         <translation>Сейчас программа закроется для завершения процесса шифрования. Помните, что шифрование вашего бумажника не может полностью защитить ваши монеты от кражи с помощью инфицирования вашего компьютера вредоносным ПО.</translation>
     </message>
     <message>
@@ -292,7 +294,7 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="178"/>
-        <source>NovaCoin will close now to finish the decryption process. </source>
+        <source>CryptoBuck will close now to finish the decryption process. </source>
         <translation>Сейчас программа закроется для завершения процесса расшифровки.</translation>
     </message>
     <message>
@@ -311,14 +313,14 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     <name>BitcoinGUI</name>
     <message>
         <location filename="../bitcoin.cpp" line="146"/>
-        <source>A fatal error occurred. NovaCoin can no longer continue safely and will quit.</source>
-        <translation>Произошла неисправимая ошибка. NovaCoin не может безопасно продолжать работу и будет закрыт.</translation>
+        <source>A fatal error occurred. CryptoBuck can no longer continue safely and will quit.</source>
+        <translation>Произошла неисправимая ошибка. CryptoBuck не может безопасно продолжать работу и будет закрыт.</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="96"/>
         <location filename="../bitcoingui.cpp" line="736"/>
-        <source>NovaCoin</source>
-        <translation>NovaCoin</translation>
+        <source>CryptoBuck</source>
+        <translation>CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="96"/>
@@ -342,8 +344,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="251"/>
-        <source>Send coins to a NovaCoin address</source>
-        <translation>Отправить монеты на указанный адрес NovaCoin</translation>
+        <source>Send coins to a CryptoBuck address</source>
+        <translation>Отправить монеты на указанный адрес CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="256"/>
@@ -407,13 +409,13 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="303"/>
-        <source>&amp;About NovaCoin</source>
-        <translation>&amp;О NovaCoin</translation>
+        <source>&amp;About CryptoBuck</source>
+        <translation>&amp;О CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="304"/>
-        <source>Show information about NovaCoin</source>
-        <translation>Показать информацию о NovaCoin&apos;е</translation>
+        <source>Show information about CryptoBuck</source>
+        <translation>Показать информацию о CryptoBuck&apos;е</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="307"/>
@@ -433,8 +435,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="314"/>
-        <source>Modify configuration options for NovaCoin</source>
-        <translation>Изменить параметры конфигурации NovaCoin</translation>
+        <source>Modify configuration options for CryptoBuck</source>
+        <translation>Изменить параметры конфигурации CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="316"/>
@@ -498,8 +500,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="329"/>
-        <source>Sign messages with your Novacoin addresses to prove you own them</source>
-        <translation>Подписать сообщения вашим Novacoin адресом, чтобы доказать, что вы им владеете</translation>
+        <source>Sign messages with your CryptoBuck addresses to prove you own them</source>
+        <translation>Подписать сообщения вашим CryptoBuck адресом, чтобы доказать, что вы им владеете</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="330"/>
@@ -508,8 +510,8 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="331"/>
-        <source>Verify messages to ensure they were signed with specified Novacoin addresses</source>
-        <translation>Проверить сообщения, чтобы удостовериться, что они подписаны определенным Novacoin адресом</translation>
+        <source>Verify messages to ensure they were signed with specified CryptoBuck addresses</source>
+        <translation>Проверить сообщения, чтобы удостовериться, что они подписаны определенным CryptoBuck адресом</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="332"/>
@@ -518,7 +520,7 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="333"/>
-        <source>Second auth with your Novacoin addresses</source>
+        <source>Second auth with your CryptoBuck addresses</source>
         <translation>Дополнительная авторизация по Вашим адресам</translation>
     </message>
     <message>
@@ -610,12 +612,12 @@ Copyright © 2012-2016 The NovaCoin developers</source>
     <message>
         <location filename="../bitcoingui.cpp" line="445"/>
         <location filename="../bitcoingui.cpp" line="513"/>
-        <source>NovaCoin client</source>
-        <translation>NovaCoin клиент</translation>
+        <source>CryptoBuck client</source>
+        <translation>CryptoBuck клиент</translation>
     </message>
     <message numerus="yes">
         <location filename="../bitcoingui.cpp" line="586"/>
-        <source>%n active connection(s) to NovaCoin network</source>
+        <source>%n active connection(s) to CryptoBuck network</source>
         <translation>
             <numerusform>%n активное соединение с сетью</numerusform>
             <numerusform>%n активных соединений с сетью</numerusform>
@@ -793,8 +795,8 @@ Address: %4
     <message>
         <location filename="../bitcoingui.cpp" line="982"/>
         <location filename="../bitcoingui.cpp" line="997"/>
-        <source>URI can not be parsed! This can be caused by an invalid NovaCoin address or malformed URI parameters.</source>
-        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом NovaCoin или неправильными параметрами URI.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid CryptoBuck address or malformed URI parameters.</source>
+        <translation>Не удалось обработать URI! Это может быть связано с неверным адресом CryptoBuck или неправильными параметрами URI.</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="1016"/>
@@ -932,8 +934,8 @@ Some or all keys from:
         <translation>Сумма:</translation>
     </message>
     <message>
-        <source>0.00 NVC</source>
-        <translation type="obsolete">0.00 NVC</translation>
+        <source>0.00 BUK</source>
+        <translation type="obsolete">0.00 BUK</translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="157"/>
@@ -1234,8 +1236,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../editaddressdialog.cpp" line="103"/>
-        <source>The entered address &quot;%1&quot; is not a valid NovaCoin address.</source>
-        <translation>Введённый адрес &quot;%1&quot; не является правильным NovaCoin-адресом.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid CryptoBuck address.</source>
+        <translation>Введённый адрес &quot;%1&quot; не является правильным CryptoBuck-адресом.</translation>
     </message>
     <message>
         <location filename="../editaddressdialog.cpp" line="108"/>
@@ -1286,8 +1288,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../guiutil.cpp" line="476"/>
         <location filename="../guiutil.cpp" line="488"/>
-        <source>NovaCoin-Qt</source>
-        <translation>NovaCoin-Qt</translation>
+        <source>CryptoBuck-Qt</source>
+        <translation>CryptoBuck-Qt</translation>
     </message>
     <message>
         <location filename="../guiutil.cpp" line="476"/>
@@ -1334,17 +1336,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../forms/intro.ui" line="23"/>
-        <source>Welcome to novacoin-qt.</source>
+        <source>Welcome to cryptobuck-qt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/intro.ui" line="49"/>
-        <source>As this is the first time the program is launched, you can choose where novacoin-qt will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where cryptobuck-qt will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/intro.ui" line="59"/>
-        <source>novacoin-qt will download and store a copy of the Novacoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>cryptobuck-qt will download and store a copy of the CryptoBuck block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1359,7 +1361,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../intro.cpp" line="184"/>
-        <source>Novacoin-qt</source>
+        <source>cryptobuck-qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1791,8 +1793,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation type="obsolete">123.456</translation>
     </message>
     <message>
-        <source>NVC</source>
-        <translation type="obsolete">NVC</translation>
+        <source>BUK</source>
+        <translation type="obsolete">BUK</translation>
     </message>
     <message>
         <location filename="../forms/multisigdialog.ui" line="413"/>
@@ -1901,13 +1903,13 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../multisigdialog.cpp" line="522"/>
-        <source>The fee of the transaction (%1 NVC) is smaller than the expected fee (%2 NVC). Do you want to send the transaction anyway?</source>
-        <translation>Комиссия (%1 NVC) меньше необходимой (%2 NVC). Вы хотите отправить транзакцию без изменений?</translation>
+        <source>The fee of the transaction (%1 BUK) is smaller than the expected fee (%2 BUK). Do you want to send the transaction anyway?</source>
+        <translation>Комиссия (%1 BUK) меньше необходимой (%2 BUK). Вы хотите отправить транзакцию без изменений?</translation>
     </message>
     <message>
         <location filename="../multisigdialog.cpp" line="528"/>
-        <source>The fee of the transaction (%1 NVC) is bigger than the expected fee (%2 NVC). Do you want to send the transaction anyway?</source>
-        <translation>Комиссия (%1 NVC) больше необходимой (%2 NVC). Вы хотите отправить транзакцию без изменений?</translation>
+        <source>The fee of the transaction (%1 BUK) is bigger than the expected fee (%2 BUK). Do you want to send the transaction anyway?</source>
+        <translation>Комиссия (%1 BUK) больше необходимой (%2 BUK). Вы хотите отправить транзакцию без изменений?</translation>
     </message>
 </context>
 <context>
@@ -1982,13 +1984,13 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="86"/>
-        <source>Automatically start NovaCoin after logging in to the system.</source>
-        <translation>Автоматически запускать NovaCoin после входа в систему</translation>
+        <source>Automatically start CryptoBuck after logging in to the system.</source>
+        <translation>Автоматически запускать CryptoBuck после входа в систему</translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="89"/>
-        <source>&amp;Start NovaCoin on system login</source>
-        <translation>&amp;Запускать NovaCoin при входе в систему</translation>
+        <source>&amp;Start CryptoBuck on system login</source>
+        <translation>&amp;Запускать CryptoBuck при входе в систему</translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="96"/>
@@ -2007,8 +2009,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="126"/>
-        <source>Connect to the NovaCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Подключаться к сети NovaCoin через прокси SOCKS (например, при подключении через Tor).</translation>
+        <source>Connect to the CryptoBuck network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Подключаться к сети CryptoBuck через прокси SOCKS (например, при подключении через Tor).</translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="129"/>
@@ -2117,8 +2119,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="425"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting NovaCoin.</source>
-        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска NovaCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting CryptoBuck.</source>
+        <translation>Здесь можно выбрать язык интерфейса. Настройки вступят в силу после перезапуска CryptoBuck.</translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="436"/>
@@ -2132,8 +2134,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="458"/>
-        <source>Whether to show NovaCoin addresses in the transaction list or not.</source>
-        <translation>Показывать ли адреса NovaCoin в списке транзакций.</translation>
+        <source>Whether to show CryptoBuck addresses in the transaction list or not.</source>
+        <translation>Показывать ли адреса CryptoBuck в списке транзакций.</translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="461"/>
@@ -2194,8 +2196,8 @@ Reduce the number of addresses involved in the address creation.</source>
         <location filename="../optionsdialog.cpp" line="251"/>
         <location filename="../optionsdialog.cpp" line="260"/>
         <location filename="../optionsdialog.cpp" line="269"/>
-        <source>This setting will take effect after restarting NovaCoin.</source>
-        <translation>Эта настройка вступит в силу после перезапуска NovaCoin</translation>
+        <source>This setting will take effect after restarting CryptoBuck.</source>
+        <translation>Эта настройка вступит в силу после перезапуска CryptoBuck</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="299"/>
@@ -2228,8 +2230,8 @@ Reduce the number of addresses involved in the address creation.</source>
     <message>
         <location filename="../forms/overviewpage.ui" line="46"/>
         <location filename="../forms/overviewpage.ui" line="365"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the NovaCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью NovaCoin после подключения, но этот процесс пока не завершён.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the CryptoBuck network after a connection is established, but this process has not completed yet.</source>
+        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью CryptoBuck после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
         <location filename="../forms/overviewpage.ui" line="225"/>
@@ -2329,18 +2331,18 @@ Reduce the number of addresses involved in the address creation.</source>
     <name>QObject</name>
     <message>
         <location filename="../bitcoinunits.cpp" line="48"/>
-        <source>NovaCoins</source>
-        <translation>NovaCoins</translation>
+        <source>CryptoBucks</source>
+        <translation>CryptoBucks</translation>
     </message>
     <message>
         <location filename="../bitcoinunits.cpp" line="49"/>
-        <source>Milli-NovaCoins (1 / 1,000)</source>
-        <translation>Милли-NovaCoins (1 / 1000)</translation>
+        <source>Milli-CryptoBucks (1 / 1,000)</source>
+        <translation>Милли-CryptoBucks (1 / 1000)</translation>
     </message>
     <message>
         <location filename="../bitcoinunits.cpp" line="50"/>
-        <source>Micro-NovaCoins (1 / 1,000,000)</source>
-        <translation>Микро-NovaCoins (1 / 1000000)</translation>
+        <source>Micro-CryptoBucks (1 / 1,000,000)</source>
+        <translation>Микро-CryptoBucks (1 / 1000000)</translation>
     </message>
     <message>
         <location filename="../bitcoinunits.cpp" line="185"/>
@@ -2440,8 +2442,8 @@ Reduce the number of addresses involved in the address creation.</source>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>NovaCoin - Debug window</source>
-        <translation>NovaCoin - Окно отладки</translation>
+        <source>CryptoBuck - Debug window</source>
+        <translation>CryptoBuck - Окно отладки</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>
@@ -2480,8 +2482,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="95"/>
-        <source>Open the NovaCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Открыть отладочный лог-файл NovaCoin из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
+        <source>Open the CryptoBuck debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Открыть отладочный лог-файл CryptoBuck из текущего каталога данных. Это может занять несколько секунд для больших лог-файлов.</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="98"/>
@@ -2495,8 +2497,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="147"/>
-        <source>Show the NovaCoin-Qt help message to get a list with possible NovaCoin command-line options.</source>
-        <translation>Показать помощь по NovaCoin-Qt, чтобы получить список доступных параметров командной строки.</translation>
+        <source>Show the CryptoBuck-Qt help message to get a list with possible CryptoBuck command-line options.</source>
+        <translation>Показать помощь по CryptoBuck-Qt, чтобы получить список доступных параметров командной строки.</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="150"/>
@@ -2560,8 +2562,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="383"/>
-        <source>NovaCoin Core</source>
-        <translation>Ядро NovaCoin</translation>
+        <source>CryptoBuck Core</source>
+        <translation>Ядро CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="406"/>
@@ -2570,8 +2572,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="426"/>
-        <source>Open the NovaCoin configuration file from the current data directory.</source>
-        <translation>Открыть конфигурационный файл NovaCoin из текущего каталога данных.</translation>
+        <source>Open the CryptoBuck configuration file from the current data directory.</source>
+        <translation>Открыть конфигурационный файл CryptoBuck из текущего каталога данных.</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="429"/>
@@ -2615,8 +2617,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="325"/>
-        <source>Welcome to the NovaCoin RPC console.</source>
-        <translation>Добро пожаловать в RPC-консоль NovaCoin.</translation>
+        <source>Welcome to the CryptoBuck RPC console.</source>
+        <translation>Добро пожаловать в RPC-консоль CryptoBuck.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="326"/>
@@ -2666,8 +2668,8 @@ Reduce the number of addresses involved in the address creation.</source>
         <translation type="obsolete">Подписи - подписать/проверить сообщение</translation>
     </message>
     <message>
-        <source>The address to sign the message with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation type="obsolete">Адрес, которым вы хотите подписать сообщение  (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address to sign the message with (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation type="obsolete">Адрес, которым вы хотите подписать сообщение  (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../forms/secondauthdialog.ui" line="48"/>
@@ -2711,8 +2713,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../secondauthdialog.cpp" line="29"/>
-        <source>Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите адрес NovaCoin (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a CryptoBuck address (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Введите адрес CryptoBuck (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../secondauthdialog.cpp" line="80"/>
@@ -2767,8 +2769,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/secondauthdialog.ui" line="38"/>
-        <source>The address for authentification (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес, по которому вы проходите авторизацию (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address for authentification (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Адрес, по которому вы проходите авторизацию (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../forms/secondauthdialog.ui" line="79"/>
@@ -2844,8 +2846,8 @@ Reduce the number of addresses involved in the address creation.</source>
         <translation>Сумма:</translation>
     </message>
     <message>
-        <source>0.00 NVC</source>
-        <translation type="obsolete">0.00 NVC</translation>
+        <source>0.00 BUK</source>
+        <translation type="obsolete">0.00 BUK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="337"/>
@@ -2933,8 +2935,8 @@ Reduce the number of addresses involved in the address creation.</source>
         <translation>Баланс:</translation>
     </message>
     <message>
-        <source>123.456 NVC</source>
-        <translation type="obsolete">123.456 NVC</translation>
+        <source>123.456 BUK</source>
+        <translation type="obsolete">123.456 BUK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="772"/>
@@ -2948,8 +2950,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="43"/>
-        <source>Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите NovaCoin-адрес (например 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a CryptoBuck address (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Введите CryptoBuck-адрес (например 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="57"/>
@@ -3078,8 +3080,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/sendcoinsentry.ui" line="93"/>
-        <source>The address to send the payment to  (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес получателя платежа (например 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address to send the payment to  (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Адрес получателя платежа (например 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsentry.ui" line="103"/>
@@ -3108,8 +3110,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="26"/>
-        <source>Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите NovaCoin-адрес (например 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a CryptoBuck address (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Введите CryptoBuck-адрес (например 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
 </context>
 <context>
@@ -3132,8 +3134,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="51"/>
-        <source>The address to sign the message with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес, которым вы хотите подписать сообщение  (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address to sign the message with (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Адрес, которым вы хотите подписать сообщение  (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="61"/>
@@ -3169,8 +3171,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="148"/>
-        <source>Sign the message to prove you own this NovaCoin address</source>
-        <translation>Подписать сообщение, чтобы доказать владение адресом NovaCoin</translation>
+        <source>Sign the message to prove you own this CryptoBuck address</source>
+        <translation>Подписать сообщение, чтобы доказать владение адресом CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="165"/>
@@ -3196,13 +3198,13 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="254"/>
-        <source>The address the message was signed with (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Адрес, которым было подписано сообщение (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>The address the message was signed with (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Адрес, которым было подписано сообщение (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="294"/>
-        <source>Verify the message to ensure it was signed with the specified NovaCoin address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом NovaCoin</translation>
+        <source>Verify the message to ensure it was signed with the specified CryptoBuck address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом CryptoBuck</translation>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="311"/>
@@ -3212,8 +3214,8 @@ Reduce the number of addresses involved in the address creation.</source>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="29"/>
         <location filename="../signverifymessagedialog.cpp" line="32"/>
-        <source>Enter a NovaCoin address (e.g. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</source>
-        <translation>Введите адрес NovaCoin (напр. 4Zo1ga6xuKuQ7JV7M9rGDoxdbYwV5zgQJ5)</translation>
+        <source>Enter a CryptoBuck address (e.g. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</source>
+        <translation>Введите адрес CryptoBuck (напр. 3LX4HrM2vMa9rt8zDiutWvcvAi1894uRxj)</translation>
     </message>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="30"/>
@@ -3222,8 +3224,8 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="33"/>
-        <source>Enter NovaCoin signature</source>
-        <translation>Введите подпись NovaCoin</translation>
+        <source>Enter CryptoBuck signature</source>
+        <translation>Введите подпись CryptoBuck</translation>
     </message>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="115"/>
@@ -3813,7 +3815,7 @@ Reduce the number of addresses involved in the address creation.</source>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=novacoinrpc
+rpcuser=cryptobuckrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.
@@ -3821,7 +3823,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
         <translation>%s, вы должны установить опцию rpcpassword в конфигурационном файле:
  %s
 Рекомендуется использовать следующий случайный пароль:
-rpcuser=novacoinrpc
+rpcuser=cryptobuckrpc
 rpcpassword=%s
 (вам не нужно запоминать этот пароль)
 Если файл не существует, создайте его и установите права доступа только для владельца.
@@ -3844,8 +3846,8 @@ rpcpassword=%s
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="26"/>
-        <source>Cannot obtain a lock on data directory %s.  NovaCoin is probably already running.</source>
-        <translation>Невозможно установить блокировку на рабочую директорию %s.  Возможно, NovaCoin уже запущен.</translation>
+        <source>Cannot obtain a lock on data directory %s.  CryptoBuck is probably already running.</source>
+        <translation>Невозможно установить блокировку на рабочую директорию %s.  Возможно, CryptoBuck уже запущен.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="29"/>
@@ -3894,8 +3896,8 @@ rpcpassword=%s
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="54"/>
-        <source>Unable to bind to %s on this computer. NovaCoin is probably already running.</source>
-        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, NovaCoin уже работает.</translation>
+        <source>Unable to bind to %s on this computer. CryptoBuck is probably already running.</source>
+        <translation>Невозможно привязаться к %s на этом компьютере.  Возможно, CryptoBuck уже работает.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="56"/>
@@ -3904,8 +3906,8 @@ rpcpassword=%s
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="59"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong NovaCoin will not work properly.</source>
-        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, NovaCoin будет работать некорректно.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong CryptoBuck will not work properly.</source>
+        <translation>Внимание: убедитесь, что дата и время на Вашем компьютере выставлены верно. Если Ваши часы идут неправильно, CryptoBuck будет работать некорректно.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="62"/>
@@ -4033,8 +4035,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="95"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of NovaCoin</source>
-        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию NovaCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of CryptoBuck</source>
+        <translation>Ошибка загрузки wallet.dat: бумажник требует более новую версию CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="96"/>
@@ -4179,13 +4181,13 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="124"/>
-        <source>NovaCoin version</source>
+        <source>CryptoBuck version</source>
         <translation>Версия</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="125"/>
-        <source>NovaCoin</source>
-        <translation>NovaCoin</translation>
+        <source>CryptoBuck</source>
+        <translation>CryptoBuck</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="126"/>
@@ -4245,8 +4247,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="137"/>
-        <source>Send command to -server or novacoind</source>
-        <translation>Отправить команду на -server или novacoind</translation>
+        <source>Send command to -server or cryptobuckd</source>
+        <translation>Отправить команду на -server или cryptobuckd</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="138"/>
@@ -4310,8 +4312,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="150"/>
-        <source>Specify configuration file (default: novacoin.conf)</source>
-        <translation>Указать конфигурационный файл (по умолчанию: novacoin.conf)</translation>
+        <source>Specify configuration file (default: cryptobuck.conf)</source>
+        <translation>Указать конфигурационный файл (по умолчанию: cryptobuck.conf)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="151"/>
@@ -4325,8 +4327,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="153"/>
-        <source>Specify pid file (default: novacoind.pid)</source>
-        <translation>Указать pid-файл (по умолчанию: novacoin.pid)</translation>
+        <source>Specify pid file (default: cryptobuckd.pid)</source>
+        <translation>Указать pid-файл (по умолчанию: cryptobuck.pid)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="154"/>
@@ -4407,8 +4409,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="169"/>
-        <source>Wallet needed to be rewritten: restart NovaCoin to complete</source>
-        <translation>Необходимо перезаписать бумажник, перезапустите NovaCoin для завершения операции.</translation>
+        <source>Wallet needed to be rewritten: restart CryptoBuck to complete</source>
+        <translation>Необходимо перезаписать бумажник, перезапустите CryptoBuck для завершения операции.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="170"/>

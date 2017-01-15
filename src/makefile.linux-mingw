@@ -11,13 +11,13 @@ STRIP:=$(TARGET_PLATFORM)-w64-mingw32-strip
 
 DEPSDIR:=/usr/$(TARGET_PLATFORM)-w64-mingw32
 
-BOOST_LIB_PATH:=$(DEPSDIR)/boost_1_57_0/stage/lib
-BDB_LIB_PATH:=$(DEPSDIR)/db-6.0.20.NC/build_unix
-OPENSSL_LIB_PATH:=$(DEPSDIR)/openssl-1.0.2g
+BOOST_LIB_PATH:=$(DEPSDIR)/boost_1_59_0/stage/lib
+BDB_LIB_PATH:=$(DEPSDIR)/db-6.0.23.NC/build_unix
+OPENSSL_LIB_PATH:=$(DEPSDIR)/openssl-1.0.1p
 
-BOOST_INCLUDE_PATH:=$(DEPSDIR)/boost_1_57_0
-BDB_INCLUDE_PATH:=$(DEPSDIR)/db-6.0.20.NC/build_unix
-OPENSSL_INCLUDE_PATH:=$(DEPSDIR)/openssl-1.0.2g/include
+BOOST_INCLUDE_PATH:=$(DEPSDIR)/boost_1_59_0
+BDB_INCLUDE_PATH:=$(DEPSDIR)/db-6.0.23.NC/build_unix
+OPENSSL_INCLUDE_PATH:=$(DEPSDIR)/openssl-1.0.1p/include
 
 USE_LEVELDB:=0
 USE_IPV6:=1
@@ -104,7 +104,7 @@ OBJS= \
     obj/cryptogram.o \
     obj/ipcollector.o
 
-all: novacoind.exe
+all: cryptobuckd.exe
 
 #
 # LevelDB support
@@ -167,12 +167,12 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	$(CXX) -c $(CFLAGS) -o $@ $<
 
-novacoind.exe: $(OBJS:obj/%=obj/%)
+cryptobuckd.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lshlwapi
-	$(STRIP) novacoind.exe
+	$(STRIP) cryptobuckd.exe
 
 clean:
-	-rm -f novacoind.exe
+	-rm -f cryptobuckd.exe
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/*.d
