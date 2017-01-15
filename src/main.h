@@ -43,9 +43,9 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = CENT/10;
 static const int64_t MIN_RELAY_TX_FEE = CENT/50;
 
-static const int64_t MAX_MONEY = std::numeric_limits<int64_t>::max();
-static const int64_t MAX_MINT_PROOF_OF_WORK = 100 * COIN;
-static const int64_t MAX_MINT_PROOF_OF_STAKE = 1 * COIN;
+static const int64_t MAX_MONEY = 10000000 * COIN;
+//static const int64_t MAX_MINT_PROOF_OF_WORK = 100 * COIN;
+static const int64_t TIME_SWITCH_PROOF_OF_STAKE = 1577836800; // 01 Jan 2020 00:00:00 GMT
 static const int64_t MIN_TXOUT_AMOUNT = CENT/100;
 
 
@@ -53,13 +53,14 @@ inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MO
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 // Maximum number of script-checking threads allowed
-static const int MAX_SCRIPTCHECK_THREADS = 16;
+static const int MAX_SCRIPTCHECK_THREADS = 8;
 
-static const uint256 hashGenesisBlock("0x00000a060336cbb72fe969666d337b87198b1add2abaa59cca226820b32933a4");
-static const uint256 hashGenesisBlockTestNet("0x000c763e402f2436da9ed36c7286f62c3f6e5dbafce9ff289bd43d7459327eb");
+static const uint256 hashGenesisBlock("0x00000b5dccd395ae2ce9617b9143c90c9756b0a8b02fda3f8be465359ad9894e");
+static const uint256 hashGenesisBlockTestNet("0x0000a0a28795d0daca0d62f6920415bce345a816e638986258019d06d661e0aa");
+static const uint256 hashSuperBlock("0x000000e20b6d57eb0de4dc268ea304c1c4a9701ea872e95c6cf1eafa45aa3251");
 
-inline int64_t PastDrift(int64_t nTime)   { return nTime - 2 * nOneHour; } // up to 2 hours from the past
-inline int64_t FutureDrift(int64_t nTime) { return nTime + 2 * nOneHour; } // up to 2 hours from the future
+inline int64_t PastDrift(int64_t nTime)   { return nTime - 10 * 60; } // up to 10 min from the past
+inline int64_t FutureDrift(int64_t nTime) { return nTime + 10 * 60; } // up to 10 min from the future
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
@@ -90,7 +91,7 @@ extern int64_t nTransactionFee;
 extern int64_t nMinimumInputValue;
 extern bool fUseFastIndex;
 extern int nScriptCheckThreads;
-extern const uint256 entropyStore[38];
+//extern const uint256 entropyStore[38];
 
 // Minimum disk space required - used in CheckDiskSpace()
 static const uint64_t nMinDiskSpace = 52428800;
@@ -123,7 +124,7 @@ void ThreadScriptCheckQuit();
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
-int64_t GetProofOfWorkReward(unsigned int nBits, int64_t nFees=0);
+int64_t GetProofOfWorkReward(int nHeight, int64_t nFees=0);
 int64_t GetProofOfStakeReward(int64_t nCoinAge, unsigned int nBits, int64_t nTime, bool bCoinYearOnly=false);
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime);
 unsigned int ComputeMinStake(unsigned int nBase, int64_t nTime, unsigned int nBlockTime);
@@ -959,23 +960,23 @@ public:
     unsigned int GetStakeEntropyBit(unsigned int nHeight) const
     {
         // Protocol switch to support p2pool at novacoin block #9689
-        if (nHeight >= 9689 || fTestNet)
-        {
+ //       if (nHeight >= 9689 || fTestNet)
+  //      {
             // Take last bit of block hash as entropy bit
             unsigned int nEntropyBit = (GetHash().Get64()) & (uint64_t)1;
             if (fDebug && GetBoolArg("-printstakemodifier"))
                 printf("GetStakeEntropyBit: nTime=%u hashBlock=%s nEntropyBit=%u\n", nTime, GetHash().ToString().c_str(), nEntropyBit);
             return nEntropyBit;
-        }
+ //       }
 
         // Before novacoin block #9689 - get from pregenerated table
-        int nBitNum = nHeight & 0xFF;
-        int nItemNum = nHeight / 0xFF;
+ //       int nBitNum = nHeight & 0xFF;
+  //      int nItemNum = nHeight / 0xFF;
 
-        unsigned int nEntropyBit = (unsigned int) ((entropyStore[nItemNum] & (uint256(1) << nBitNum)) >> nBitNum).Get64();
-        if (fDebug && GetBoolArg("-printstakemodifier"))
-            printf("GetStakeEntropyBit: from pregenerated table, nHeight=%d nEntropyBit=%u\n", nHeight, nEntropyBit);
-        return nEntropyBit;
+  //      unsigned int nEntropyBit = (unsigned int) ((entropyStore[nItemNum] & (uint256(1) << nBitNum)) >> nBitNum).Get64();
+  //      if (fDebug && GetBoolArg("-printstakemodifier"))
+  //          printf("GetStakeEntropyBit: from pregenerated table, nHeight=%d nEntropyBit=%u\n", nHeight, nEntropyBit);
+  //      return nEntropyBit;
     }
 
     // ppcoin: two types of block: proof-of-work or proof-of-stake

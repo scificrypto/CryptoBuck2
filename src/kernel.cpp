@@ -18,8 +18,8 @@ using namespace std;
 
 
 // Protocol switch time for fixed kernel modifier interval
-unsigned int nModifierSwitchTime  = 1413763200;    // Mon, 20 Oct 2014 00:00:00 GMT
-unsigned int nModifierTestSwitchTime = 1397520000; // Tue, 15 Apr 2014 00:00:00 GMT
+//unsigned int nModifierSwitchTime  = 1413763200;    // Mon, 20 Oct 2014 00:00:00 GMT
+//unsigned int nModifierTestSwitchTime = 1397520000; // Tue, 15 Apr 2014 00:00:00 GMT
 
 // Note: user must upgrade before the protocol switch deadline, otherwise it's required to
 //   re-download the blockchain. The timestamp of upgrade is recorded in the blockchain 
@@ -31,20 +31,15 @@ typedef std::map<int, unsigned int> MapModifierCheckpoints;
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
-        ( 0, 0x0e00670bu )
-        ( 12661, 0x5d84115du )
-        (143990, 0x9c592c78u )
-        (149000, 0x48f2bdc4u )
-        (160000, 0x789df0f0u )
-        (200000, 0x01ec1503u )
-        (221047, 0x0b39ef50u )
-        (243100, 0xe928d83au )
+        ( 0, 0xfd11f4e7u )
+ //       ( 12661, 0x5d84115du )
+
     ;
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic (testNet)
 static std::map<int, unsigned int> mapStakeModifierCheckpointsTestNet =
     boost::assign::map_list_of
-        ( 0, 0x0e00670bu )
+        ( 0, 0xfd11f4e7u )
     ;
 
 // Pregenerated entropy bits table (from genesis to #9689)
@@ -53,7 +48,7 @@ static std::map<int, unsigned int> mapStakeModifierCheckpointsTestNet =
 //
 // * array index calculated as nHeight / 256
 // * position of bit is calculated as nHeight & 0xFF.
-//
+/*
 const uint256 entropyStore[] = {
     uint256("0x4555b4dcc1d690ddd9b810c90c66e82b18bf4f43cc887246c418383ec120a5ab"),
     uint256("0xaa6d1198412fa77608addf6549c9198a22155e8afd7a9ded6179f6b7cfc66b0c"),
@@ -93,12 +88,12 @@ const uint256 entropyStore[] = {
     uint256("0x6e462d2a87bfde9398b6747f94a8ed6a01e4d96c5b4372df5c910c106c48bd13"),
     uint256("0x8eeb696181957c4b22434028990f49cb30006827c73860e77e2eecf5c38be99d"),
     uint256("0x3188aaa65877b166f05cdc48f55b1f77a7d6fb221c395596d990ae5647e9ba96")
-};
+}; */
 
 // Whether the given block is subject to new modifier protocol
 bool IsFixedModifierInterval(unsigned int nTimeBlock)
 {
-    return (nTimeBlock >= (fTestNet? nModifierTestSwitchTime : nModifierSwitchTime));
+    return true; //(nTimeBlock >= (fTestNet? nModifierTestSwitchTime : nModifierSwitchTime));
 }
 
 // Get the last stake modifier and its generation time from a given block

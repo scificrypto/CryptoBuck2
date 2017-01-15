@@ -15,7 +15,7 @@
 namespace Checkpoints
 {
     typedef std::map<int, std::pair<uint256, unsigned int> > MapCheckpoints;
-    typedef std::list<uint256> ListBannedBlocks;
+//    typedef std::list<uint256> ListBannedBlocks;
 
     //
     // What makes a good checkpoint block?
@@ -26,26 +26,21 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        ( 0,     std::make_pair(hashGenesisBlock, 1360105017) )
-        ( 13560, std::make_pair(uint256("0xa1591a0fcbf11f282d671581edb9f0aadcd06fee69761081e0a3245914c13729"), 1364674052) )
-        ( 143990, std::make_pair(uint256("0x00000000001ff5c3940a9f73ad4a990f64955179bde0f743c76dbf0031429efc"), 1418953493) )
-        ( 149000, std::make_pair(uint256("0x7a24acfcadcf43054e7f7d9f273522c0dfc5791ba4006e0273e7521a8d36c525"), 1420872125) )
-        ( 160000, std::make_pair(uint256("0x000000000001cb1133043d38d077c0e93f66c8b2566779f10f182137d1e34a68"), 1425150237) )
-        ( 200000, std::make_pair(uint256("0x0000000000029f8bbf66e6ea6f3e5db55009404aae0fe395a53dd33142b2bff2"), 1441127233) )
-        ( 221047, std::make_pair(uint256("0xa28aef712e7aa0c285bfe29351ca21ed416689139e3063ef770fc826a8b9e9da"), 1449431646) )
-        ( 243100, std::make_pair(uint256("0x000000000006522d1ebc0734cb0e6b83f5d4da0c3cbc72bd91b82016f611c4f0"), 1458215793) )
+        ( 0,     std::make_pair(hashGenesisBlock, 1483307200) )
+ //       ( 240, std::make_pair(uint256("0x0000030e330fa44150445b33ced45d19dcfe3f850886289bff321fbecc220779"), 1483831566) )
+
     ;
 
-    static ListBannedBlocks listBanned =
-        boost::assign::list_of
+//    static ListBannedBlocks listBanned =
+//        boost::assign::list_of
         // Invalid block #221047 with future timestamp of 2016/02/23 09:24:17 UTC
-        ( uint256("0x46223e5432ceffe650d5729b4bb8479dcdf0ca1e534fa8e69382dc87b42ea94b") )
-    ;
+//        ( uint256("0x46223e5432ceffe650d5729b4bb8479dcdf0ca1e534fa8e69382dc87b42ea94b") )
+//    ;
 
     // TestNet has no checkpoints
     static MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-        ( 0, std::make_pair(hashGenesisBlockTestNet, 1360105017) )
+        ( 0, std::make_pair(hashGenesisBlockTestNet, 1483307200) )
         ;
 
     bool CheckHardened(int nHeight, const uint256& hash)
@@ -59,10 +54,10 @@ namespace Checkpoints
 
     bool CheckBanned(const uint256 &nHash)
     {
-        if (fTestNet) // Testnet has no banned blocks
+//        if (fTestNet) // Testnet has no banned blocks
             return true;
-        ListBannedBlocks::const_iterator it = std::find(listBanned.begin(), listBanned.end(), nHash);
-        return it == listBanned.end();
+//        ListBannedBlocks::const_iterator it = std::find(listBanned.begin(), listBanned.end(), nHash);
+//        return it == listBanned.end();
     }
 
     int GetTotalBlocksEstimate()
@@ -226,7 +221,7 @@ namespace Checkpoints
     {
         const CBlockIndex *pindex = pindexBest;
         // Search backward for a block within max span and maturity window
-        while (pindex->pprev && (pindex->GetBlockTime() + CHECKPOINT_MAX_SPAN > pindexBest->GetBlockTime() || pindex->nHeight + 8 > pindexBest->nHeight))
+        while (pindex->pprev && (pindex->nHeight + 8 > pindexBest->nHeight))
             pindex = pindex->pprev;
         return pindex->GetBlockHash();
     }
@@ -389,7 +384,7 @@ namespace Checkpoints
 }
 
 // ppcoin: sync-checkpoint master key
-const std::string CSyncCheckpoint::strMasterPubKey = "04a51b735f816de4ec3f891d5b38bbc91e1f7245c7c08d17990760b86b4d8fc3910a850ffecf73bfa8886f01739a0c4c4322201282d07b6e48ce931cc92af94850";
+const std::string CSyncCheckpoint::strMasterPubKey = "03bddb9be76f20d2503c83d570d67acc52a9f89653ff92a90c783000e9d3354597";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
