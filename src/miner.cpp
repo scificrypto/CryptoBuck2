@@ -203,7 +203,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, CTransaction *txCoinStake)
                     if (!mempool.mapTx.count(txin.prevout.hash))
                     {
                         printf("ERROR: mempool transaction missing input\n");
-                        if (fDebug) assert("mempool transaction missing input" == 0);
+                        //if (fDebug) assert("mempool transaction missing input" == 0);
                         fMissingInputs = true;
                         if (porphan)
                             vOrphan.pop_back();
@@ -357,7 +357,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, CTransaction *txCoinStake)
 
         if (!fProofOfStake)
         {
-            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits, nFees);
+            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pindexPrev->nHeight+1, nFees);
 
             if (fDebug)
                 printf("CreateNewBlock(): PoW reward %" PRIu64 "\n", pblock->vtx[0].vout[0].nValue);
@@ -543,7 +543,7 @@ bool FillMap(CWallet *pwallet, uint32_t nUpperTime, MidstateMap &inputsMap)
 
         CoinsSet setCoins;
         int64_t nValueIn = 0;
-        if (!pwallet->SelectCoinsSimple(nBalance - nReserveBalance, MIN_TX_FEE, MAX_MONEY, nUpperTime, nCoinbaseMaturity * 10, setCoins, nValueIn))
+        if (!pwallet->SelectCoinsSimple(nBalance - nReserveBalance, MIN_TX_FEE, MAX_MONEY, nUpperTime, nCoinbaseMaturity * 50, setCoins, nValueIn))
             return error("FillMap() : SelectCoinsSimple failed");
 
         if (setCoins.empty())
@@ -650,14 +650,14 @@ void ThreadStakeMiner(void* parg)
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
-    RenameThread("novacoin-miner");
+    RenameThread("cryptobuck-miner");
     CWallet* pwallet = (CWallet*)parg;
+    
+    int64_t nBalance = pwallet->GetBalance();
+    static int64_t nLastResetMapTime = GetTime();
 
     MidstateMap inputsMap;
-    if (!FillMap(pwallet, GetAdjustedTime(), inputsMap))
-        return;
-
-    bool fTrySync = true;
+    FillMap(pwallet, GetAdjustedTime(), inputsMap);
 
     CBlockIndex* pindexPrev = pindexBest;
     uint32_t nBits = GetNextTargetRequired(pindexPrev, true);
@@ -677,31 +677,20 @@ void ThreadStakeMiner(void* parg)
             if (fShutdown)
                 goto _endloop;
 
-            while (pwallet->IsLocked())
+            while (pwallet->IsLocked() || nBalance <= nReserveBalance)
             {
-                Sleep(1000);
+                Sleep(3000);
                 if (fShutdown)
                     goto _endloop; // Don't be afraid to use a goto if that's the best option.
             }
 
-            while (vNodes.empty() || IsInitialBlockDownload())
+            while (vNodes.empty() || IsInitialBlockDownload() || vNodes.size() < 2 || nBestHeight < GetNumBlocksOfPeers())
             {
-                fTrySync = true;
+                //fTrySync = true;
 
-                Sleep(1000);
+                Sleep(3000);
                 if (fShutdown)
                     goto _endloop;
-            }
-
-            if (fTrySync)
-            {
-                // Don't try mine blocks unless we're at the top of chain and have at least three p2p connections.
-                fTrySync = false;
-                if (vNodes.size() < 3 || nBestHeight < GetNumBlocksOfPeers())
-                {
-                    Sleep(1000);
-                    continue;
-                }
             }
 
             if (ScanMap(inputsMap, nBits, LuckyInput, solution))
@@ -717,7 +706,7 @@ void ThreadStakeMiner(void* parg)
                 // Create new coinstake transaction
                 if (!pwallet->CreateCoinStake(LuckyInput.first, LuckyInput.second, solution.second, nBits, txCoinStake, key))
                 {
-                    string strMessage = _("Warning: Unable to create coinstake transaction, see debug.log for the details. Mining thread has been stopped.");
+                    string strMessage = _("Warning: Unable to create coinstake transaction, see debug.log for the details.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
 
@@ -756,6 +745,12 @@ void ThreadStakeMiner(void* parg)
 
             if (pindexPrev != pindexBest)
             {
+                if(GetTime() - nLastResetMapTime > 30 * 60) // 30 minute reset time 
+                {
+                    nLastResetMapTime = GetTime();
+                    inputsMap.clear();
+                } 
+                
                 // The best block has been changed, we need to refill the map
                 if (FillMap(pwallet, GetAdjustedTime(), inputsMap))
                 {
