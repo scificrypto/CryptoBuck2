@@ -29,7 +29,7 @@ const std::string CLIENT_NAME("CryptoBuck");
 #define CL_NAME   "-clang"
 #elif __GNUC__
 //code for GNU C compiler
-#define CL_NAME   "-testversion"
+#define CL_NAME   "-gcc"
 #elif __MINGW32__
 //code specific to mingw compilers
 #define CL_NAME   "-mingw"
@@ -61,7 +61,7 @@ const std::string CLIENT_NAME("CryptoBuck");
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #    define GIT_COMMIT_ID ""
-#    define GIT_COMMIT_DATE "14 Jan 2017"
+#    define GIT_COMMIT_DATE "27 Jan 2017"
 #endif
 
 #define BUILD_DESC_FROM_COMMIT(maj,min,rev,commit) \

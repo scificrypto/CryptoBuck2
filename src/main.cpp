@@ -33,13 +33,13 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
-CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
+CBigNum bnProofOfWorkLimit(~uint256(0) >> 25); // "standard" scrypt target limit for proof of work, results with 0.0078 proof-of-work difficulty
 CBigNum bnProofOfStakeLegacyLimit(~uint256(0) >> 24); // proof of stake target limit with 0,00390625 proof of stake difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 27); // proof of stake target limit equal to 0.03125  proof of stake difficulty
 CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimal proof of stake difficulty at 0.25
 uint256 nPoWBase = uint256("0x000000ffff000000000000000000000000000000000000000000000000000000"); // difficulty-1 target
 
-CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
+CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 20);
 
 unsigned int nStakeMinAge = 3 * nOneDay; // 3 days as zero time weight
 unsigned int nStakeMaxAge = 15 * nOneDay; // 15 days as full weight
@@ -2702,27 +2702,27 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // MainNet:
         /*
-        CBlock(hash=00000b5dccd395ae2ce9617b9143c90c9756b0a8b02fda3f8be465359ad9894e, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
-        hashMerkleRoot=d09bf6cb571a63884dbec6d84a15a99e7dc08d956a4e5de7372b512ade487425, nTime=1483307200, nBits=1e0fffff, nNonce=255658, vtx=1, vchBlockSig=)
-        Coinbase(hash=d09bf6cb57, nTime=1483307200, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        CTxIn(COutPoint(0000000000, 4294967295), coinbase 04ffff001d020f272543727970746f4275636b202d2056616c756564206d6f7265207468616e206120636f696e21)
+        CBlock(hash=0000001631d4b7a64c63c20972cf2f432a2ebfbdd9ac3f5a1eae2a69f590c379, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
+        hashMerkleRoot=10871cdb3c43fd245dca650e371b572bfff2781a752346bdb265213ae2b477c3, nTime=1484931600, nBits=1d7fffff, nNonce=4928076, vtx=1, vchBlockSig=)
+        Coinbase(hash=10871cdb3c, nTime=1484931600, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        CTxIn(COutPoint(0000000000, 4294967295), coinbase 04ffff001d020f274c566e6f766165786368616e67652e636f6d2f6d61726b65742f4254435f42554b207c206578706c6f7265722e63727970746f6275636b2e636f6d207c2062756b2e63727970746f636f696e6578706c6f7265722e636f6d)
         CTxOut(empty)
-        vMerkleTree: d09bf6cb57
+        vMerkleTree: 10871cdb3c
         */
 
         // TestNet:
         /*
-        CBlock(hash=0000a0a28795d0daca0d62f6920415bce345a816e638986258019d06d661e0aa, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
-        hashMerkleRoot=d09bf6cb571a63884dbec6d84a15a99e7dc08d956a4e5de7372b512ade487425, nTime=1483307200, nBits=1f00ffff, nNonce=56936, vtx=1, vchBlockSig=)
-        Coinbase(hash=d09bf6cb57, nTime=1483307200, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        CTxIn(COutPoint(0000000000, 4294967295), coinbase 04ffff001d020f272543727970746f4275636b202d2056616c756564206d6f7265207468616e206120636f696e21)
+        CBlock(hash=000009815d4906f8010061425dc888b4aaa2a5ea6035918df3ece58c6692e9df, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
+        hashMerkleRoot=10871cdb3c43fd245dca650e371b572bfff2781a752346bdb265213ae2b477c3, nTime=1484931600, nBits=1e0fffff, nNonce=1757703, vtx=1, vchBlockSig=)
+        Coinbase(hash=10871cdb3c, nTime=1484931600, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        CTxIn(COutPoint(0000000000, 4294967295), coinbase 04ffff001d020f274c566e6f766165786368616e67652e636f6d2f6d61726b65742f4254435f42554b207c206578706c6f7265722e63727970746f6275636b2e636f6d207c2062756b2e63727970746f636f696e6578706c6f7265722e636f6d)
         CTxOut(empty)
-        vMerkleTree: d09bf6cb57
+        vMerkleTree: 10871cdb3c
         */
 
-        const string strTimestamp = "CryptoBuck - Valued more than a coin!";
+        const string strTimestamp = "novaexchange.com/market/BTC_BUK | explorer.cryptobuck.com | buk.cryptocoinexplorer.com";
         CTransaction txNew;
-        txNew.nTime = 1483307200;
+        txNew.nTime = 1484931600;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(9999) << vector<unsigned char>(strTimestamp.begin(), strTimestamp.end());
@@ -2732,12 +2732,12 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1483307200;
+        block.nTime    = 1484931600;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = !fTestNet ? 255658 : 56936;
+        block.nNonce   = !fTestNet ? 4928076 : 1757703;
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0xd09bf6cb571a63884dbec6d84a15a99e7dc08d956a4e5de7372b512ade487425"));
+        assert(block.hashMerkleRoot == uint256("0x10871cdb3c43fd245dca650e371b572bfff2781a752346bdb265213ae2b477c3"));
         block.print();
         
         if (false && block.GetHash() != hashGenesisBlock)
