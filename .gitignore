@@ -1,5 +1,5 @@
 src/*.exe
-src/novacoind
+src/cryptobuckd
 src/build.h
 .*.swp
 *.*~*
@@ -12,7 +12,7 @@ src/build.h
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-novacoin-qt
+cryptobuck-qt
 #resources cpp
 qrc_*.cpp
 #qt creator
